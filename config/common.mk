@@ -155,6 +155,10 @@ PRODUCT_COPY_FILES += \
     vendor/custom/prebuilt/common/bin/busybox-arm:install/bin/busybox
 endif
 
+# Dex preopt
+PRODUCT_DEXPREOPT_SPEED_APPS += \
+    SystemUIGoogle
+
 DEVICE_PACKAGE_OVERLAYS += vendor/custom/overlay/common
 
 # Set all versions
