@@ -125,6 +125,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Don't build tests
 EXCLUDE_SYSTEMUI_TESTS := true
 
+# Dex preopt
+PRODUCT_DEXPREOPT_SPEED_APPS += \
+    SystemUIGoogle
+
 DEVICE_PACKAGE_OVERLAYS += vendor/custom/overlay/common
 
 # Set all versions
