@@ -116,6 +116,14 @@ PRODUCT_PACKAGES += \
     ntfsfix \
     ntfs-3g
 
+# Markup Google
+PRODUCT_PACKAGES += \
+    MarkupGoogle
+
+PRODUCT_COPY_FILES += \
+    vendor/custom/prebuilt/lib/libsketchology_native.so:system/lib/libsketchology_native.so \
+    vendor/custom/prebuilt/lib64/libsketchology_native.so:system/lib64/libsketchology_native.so
+
 PRODUCT_PACKAGES += \
     charger_res_images
 
