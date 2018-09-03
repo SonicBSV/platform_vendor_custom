@@ -20,37 +20,37 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Backup tool
 PRODUCT_COPY_FILES += \
-    vendor/gzosp/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
-    vendor/gzosp/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/gzosp/prebuilt/common/bin/50-gzosp.sh:system/addon.d/50-gzosp.sh \
-    vendor/gzosp/prebuilt/common/bin/clean_cache.sh:system/bin/clean_cache.sh
+    vendor/custom/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/custom/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
+    vendor/custom/prebuilt/common/bin/50-custom.sh:system/addon.d/50-custom.sh \
+    vendor/custom/prebuilt/common/bin/clean_cache.sh:system/bin/clean_cache.sh
 
 ifeq ($(AB_OTA_UPDATER),true)
 PRODUCT_COPY_FILES += \
-    vendor/gzosp/prebuilt/common/bin/backuptool_ab.sh:system/bin/backuptool_ab.sh \
-    vendor/gzosp/prebuilt/common/bin/backuptool_ab.functions:system/bin/backuptool_ab.functions \
-    vendor/gzosp/prebuilt/common/bin/backuptool_postinstall.sh:system/bin/backuptool_postinstall.sh
+    vendor/custom/prebuilt/common/bin/backuptool_ab.sh:system/bin/backuptool_ab.sh \
+    vendor/custom/prebuilt/common/bin/backuptool_ab.functions:system/bin/backuptool_ab.functions \
+    vendor/custom/prebuilt/common/bin/backuptool_postinstall.sh:system/bin/backuptool_postinstall.sh
 endif
 
 # Backup services whitelist
 PRODUCT_COPY_FILES += \
-    vendor/gzosp/config/permissions/backup.xml:system/etc/sysconfig/backup.xml
+    vendor/custom/config/permissions/backup.xml:system/etc/sysconfig/backup.xml
 
 # Signature compatibility validation
 PRODUCT_COPY_FILES += \
-    vendor/gzosp/prebuilt/common/bin/otasigcheck.sh:install/bin/otasigcheck.sh
+    vendor/custom/prebuilt/common/bin/otasigcheck.sh:install/bin/otasigcheck.sh
 
-# Gzosp-specific init file
+# Custom-specific init file
 PRODUCT_COPY_FILES += \
-    vendor/gzosp/prebuilt/common/etc/init.local.rc:root/init.gzosp.rc
+    vendor/custom/prebuilt/common/etc/init.local.rc:root/init.custom.rc
 
 # Copy LatinIME for gesture typing
 PRODUCT_COPY_FILES += \
-    vendor/gzosp/prebuilt/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
+    vendor/custom/prebuilt/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
 
 # SELinux filesystem labels
 PRODUCT_COPY_FILES += \
-    vendor/gzosp/prebuilt/common/etc/init.d/50selinuxrelabel:system/etc/init.d/50selinuxrelabel
+    vendor/custom/prebuilt/common/etc/init.d/50selinuxrelabel:system/etc/init.d/50selinuxrelabel
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
@@ -58,13 +58,13 @@ PRODUCT_COPY_FILES += \
 
 # Don't export PS1 in /system/etc/mkshrc.
 PRODUCT_COPY_FILES += \
-    vendor/gzosp/prebuilt/common/etc/mkshrc:system/etc/mkshrc \
-    vendor/gzosp/prebuilt/common/etc/sysctl.conf:system/etc/sysctl.conf
+    vendor/custom/prebuilt/common/etc/mkshrc:system/etc/mkshrc \
+    vendor/custom/prebuilt/common/etc/sysctl.conf:system/etc/sysctl.conf
 
-# Gzosp-specific startup services
+# Specific startup services
 PRODUCT_COPY_FILES += \
-    vendor/gzosp/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit \
-    vendor/gzosp/prebuilt/common/bin/sysinit:system/bin/sysinit
+    vendor/custom/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit \
+    vendor/custom/prebuilt/common/bin/sysinit:system/bin/sysinit
 
 # Required packages
 PRODUCT_PACKAGES += \
@@ -133,31 +133,28 @@ PRODUCT_PACKAGES += \
     AndroidDarkThemeOverlay \
     SettingsDarkThemeOverlay
 
-PRODUCT_PACKAGE_OVERLAYS += vendor/gzosp/overlay/common
+PRODUCT_PACKAGE_OVERLAYS += vendor/custom/overlay/common
 
 # Versioning System
-# gzosp first version.
-PRODUCT_VERSION_MAJOR = 9.0
-PRODUCT_VERSION_MINOR = Alpha
+# custom first version.
 PRODUCT_VERSION_MAINTENANCE = 1.0
-GZOSP_POSTFIX := -$(shell date +"%Y%m%d-%H%M")
-ifdef GZOSP_BUILD_EXTRA
-    GZOSP_POSTFIX := -$(GZOSP_BUILD_EXTRA)
+CUSTOM_POSTFIX := -$(shell date +"%d_%m")
+ifdef CUSTOM_BUILD_EXTRA
+    CUSTOM_POSTFIX := -$(CUSTOM_BUILD_EXTRA)
 endif
 
-ifndef GZOSP_BUILD_TYPE
-    GZOSP_BUILD_TYPE := UNOFFICIAL
+ifndef CUSTOM_BUILD_TYPE
+    CUSTOM_BUILD_TYPE := UNOFFICIAL
 endif
 
 # Set all versions
-GZOSP_VERSION := Gzosp-$(GZOSP_BUILD)-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)-$(GZOSP_BUILD_TYPE)$(GZOSP_POSTFIX)
-GZOSP_MOD_VERSION := Gzosp-$(GZOSP_BUILD)-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)-$(GZOSP_BUILD_TYPE)$(GZOSP_POSTFIX)
+CUSTOM_VERSION := KAF_$(CUSTOM_BUILD)_$(shell sed '5q;d' .repo/manifest.xml | sed 's/.*tags\/\(.*\)".*/\1/')$(CUSTOM_POSTFIX)-$(CUSTOM_BUILD_TYPE)
+CUSTOM_MOD_VERSION := $(CUSTOM_VERSION)
 
 PRODUCT_PROPERTY_OVERRIDES += \
     BUILD_DISPLAY_ID=$(BUILD_ID) \
-    gzosp.ota.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE) \
-    ro.gzosp.version=$(GZOSP_VERSION) \
-    ro.modversion=$(GZOSP_MOD_VERSION) \
-    ro.gzosp.buildtype=$(GZOSP_BUILD_TYPE)
+    ro.custom.version=$(CUSTOM_VERSION) \
+    ro.modversion=$(CUSTOM_VERSION) \
+    ro.custom.buildtype=$(CUSTOM_BUILD_TYPE)
 
-EXTENDED_POST_PROCESS_PROPS := vendor/gzosp/tools/gzosp_process_props.py
+EXTENDED_POST_PROCESS_PROPS := vendor/custom/tools/custom_process_props.py
