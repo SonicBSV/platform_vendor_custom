@@ -135,6 +135,13 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGE_OVERLAYS += vendor/custom/overlay/common
 
+# Qualcomm performance frameworks
+ifeq ($(USE_QCOM_PERF),true)
+    PRODUCT_BOOT_JARS += \
+        QPerformance \
+        UxPerformance
+endif
+
 # Versioning System
 # custom first version.
 PRODUCT_VERSION_MAINTENANCE = 1.0
