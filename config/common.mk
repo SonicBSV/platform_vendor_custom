@@ -165,3 +165,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.custom.buildtype=$(CUSTOM_BUILD_TYPE)
 
 EXTENDED_POST_PROCESS_PROPS := vendor/custom/tools/custom_process_props.py
+
+-include vendor/custom/config/qualcomm.mk
