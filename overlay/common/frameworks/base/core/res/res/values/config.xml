@@ -84,5 +84,8 @@
     <string-array name="config_ephemeralResolverPackage">
         <item>com.google.android.gms</item>
     </string-array>
+
+    <!-- Enable gestures on home button -->
+    <bool name="config_swipe_up_gesture_setting_available">true</bool>
 </resources>
 
