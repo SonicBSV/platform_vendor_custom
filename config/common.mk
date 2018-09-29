@@ -142,6 +142,14 @@ ifeq ($(USE_QCOM_PERF),true)
         UxPerformance
 endif
 
+# Themes
+PRODUCT_PROPERTY_OVERRIDES += ro.boot.vendor.overlay.theme=com.google.android.theme.pixel
+PRODUCT_PROPERTY_OVERRIDES += ro.com.google.ime.theme_id=5
+PRODUCT_PACKAGES += \
+   Pixel \
+   Stock \
+   Mono
+
 # Versioning System
 # custom first version.
 PRODUCT_VERSION_MAINTENANCE = 1.0
