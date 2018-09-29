@@ -87,5 +87,8 @@
 
     <!-- Enable gestures on home button -->
     <bool name="config_swipe_up_gesture_setting_available">true</bool>
+
+    <!-- Enable VoLTE logo -->
+    <bool name="config_display_volte">true</bool>
 </resources>
 
