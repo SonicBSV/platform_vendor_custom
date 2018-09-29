@@ -163,7 +163,7 @@ ifndef CUSTOM_BUILD_TYPE
 endif
 
 # Set all versions
-CUSTOM_VERSION := KAF_$(CUSTOM_BUILD)_$(shell sed '5q;d' .repo/manifest.xml | sed 's/.*tags\/\(.*\)".*/\1/')$(CUSTOM_POSTFIX)-$(CUSTOM_BUILD_TYPE)
+CUSTOM_VERSION := KAF-$(CUSTOM_BUILD)$(CUSTOM_POSTFIX)-$(shell sed '5q;d' .repo/manifest.xml | sed 's/.*tags\/\(.*\)".*/\1/')-$(CUSTOM_BUILD_TYPE)
 CUSTOM_MOD_VERSION := $(CUSTOM_VERSION)
 
 PRODUCT_PROPERTY_OVERRIDES += \
