@@ -26,8 +26,8 @@ vendor/qcom/opensource/location:$(REVI) \
 vendor/qcom/opensource/dataservices:$(REVI) \
 hardware/qcom/power:$(REVI) \
 hardware/ril:$(REVI) \
-hardware/wlan:$(REVI) \
-hardware/bt:$(REVI)
+hardware/qcom/wlan:$(REVI) \
+hardware/qcom/bt:$(REVI)
 
 else
 REVI ?= 9.0
@@ -40,8 +40,8 @@ hardware/qcom/camera:$(REVI) \
 hardware/qcom/gps:$(REVI) \
 vendor/qcom/opensource/location:$(REVI) \
 hardware/ril:$(REVI) \
-hardware/wlan:$(REVI) \
-hardware/bt:$(REVI)
+hardware/qcom/wlan:$(REVI) \
+hardware/qcom/bt:$(REVI)
 endif
 
 # How this works:
