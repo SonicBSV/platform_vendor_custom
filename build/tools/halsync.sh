@@ -19,10 +19,14 @@ if [ ! -f .repo/local_manifests/hals.xml ]; then
     echo "</manifest>" >> .repo/local_manifests/hals.xml
 
 # Repo sync all the HALs
-    for hals in $HALS; do repo sync --force-sync "$hals"; done
+    for hals in $HALS; do if ! repo sync --force-sync "$hals" &> /dev/null; then FAILED=1; fi; done
 
 # Remove the manifest so we know if the user overrided it
     rm -rf .repo/local_manifests/hals.xml
+
+# Exit 1 if the script failed
+    if [ "$FAILED" == "1" ]; then exit 1; else exit 0; fi
+
 #else
 # The user overrided the manifest
 # TODO: Tell the user that he did this
