@@ -8,7 +8,7 @@ if [ ! -f .repo/local_manifests/hals.xml ]; then
 # Make the HALs manifest
     echo -e '<?xml version="1.0" encoding="UTF-8"?>\n<manifest>' > .repo/local_manifests/hals.xml
     for hal in $(<target_hals); do
-        hals=$(echo $hal | sed -e 's/://g')
+        hals=$(echo $hal | sed -e 's/:/ /g')
         path=$(echo $hals | cut -d " " -f 1)
         name=$(echo $hals | cut -d " " -f 2)
         remote=$(echo $hals | cut -d " " -f 3)
