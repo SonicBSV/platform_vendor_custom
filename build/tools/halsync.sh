@@ -9,10 +9,10 @@ if [ ! -f .repo/local_manifests/hals.xml ]; then
     echo -e '<?xml version="1.0" encoding="UTF-8"?>\n<manifest>' > .repo/local_manifests/hals.xml
     for hal in $(<target_hals); do
         hals=$(echo $hal | sed -e 's/://g')
-        path=$(echo $hals | cut -d " " -f $1)
-        name=$(echo $hals | cut -d " " -f $2)
-        remote=$(echo $hals | cut -d " " -f $3)
-        rev=$(echo $hals | cut -d " " -f $4)
+        path=$(echo $hals | cut -d " " -f 1)
+        name=$(echo $hals | cut -d " " -f 2)
+        remote=$(echo $hals | cut -d " " -f 3)
+        rev=$(echo $hals | cut -d " " -f 4)
 	    echo '  <project path="'"$path"'" name="'"$name"'" remote="'"$remote"'" revision="'"$rev"'" />' >> .repo/local_manifests/hals.xml
         HALS=$(echo -e "$HALS $path")
     done
