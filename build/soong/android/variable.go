@@ -9,6 +9,9 @@ type Product_variables struct {
 	Target_shim_libs struct {
 		Cppflags []string
 	}
+    Bootloader_message_offset struct {
+        Cflags []string
+    }
 	Has_legacy_camera_hal1 struct {
 		Cflags []string
 	}
@@ -39,6 +42,7 @@ type Product_variables struct {
 
 type ProductVariables struct {
 	Additional_gralloc_10_usage_bits  *string `json:",omitempty"`
+    Bootloader_message_offset  *int `json:",omitempty"`
 	Has_legacy_camera_hal1  *bool `json:",omitempty"`
 	Uses_media_extensions   *bool `json:",omitempty"`
 	Needs_text_relocations  *bool `json:",omitempty"`
