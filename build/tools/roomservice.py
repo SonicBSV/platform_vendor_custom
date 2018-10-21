@@ -43,7 +43,7 @@ except ImportError:
 DEBUG = False
 default_manifest = ".repo/manifests/manifest.xml"
 custom_local_manifest = ".repo/local_manifests/custom_manifest.xml"
-custom_default_revision = "8.1"
+custom_default_revision = "caf-9.0"
 custom_dependencies = "custom.dependencies"
 org_manifest = "Kalil-Devices"  # leave empty if org is provided in manifest
 org_display = "Kalil-Devices"  # needed for displaying
