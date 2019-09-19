@@ -12,7 +12,9 @@ type Product_variables struct {
 	Has_legacy_camera_hal1 struct {
 		Cflags []string
 	}
-
+	Supports_extended_compress_format struct {
+		Cflags []string
+	}
 	Uses_media_extensions struct {
 		Cflags []string
 	}
