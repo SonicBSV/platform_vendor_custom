@@ -12,59 +12,63 @@ PRODUCT_PROPERTY_OVERRIDES += \
     keyguard.no_require_sim=true
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.build.selinux=1
+    ro.build.selinux=0
 
 # Disable excessive dalvik debug messages
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.debug.alloc=0
 
-# Backup tool
-PRODUCT_COPY_FILES += \
-    vendor/custom/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
-    vendor/custom/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/custom/prebuilt/common/bin/50-custom.sh:system/addon.d/50-custom.sh \
-    vendor/custom/prebuilt/common/bin/clean_cache.sh:system/bin/clean_cache.sh
+# Optional packages
+PRODUCT_PACKAGES += \
+    libemoji \
+    LiveWallpapersPicker \
+    PhotoTable \
+    Terminal
 
-ifeq ($(AB_OTA_UPDATER),true)
-PRODUCT_COPY_FILES += \
-    vendor/custom/prebuilt/common/bin/backuptool_ab.sh:system/bin/backuptool_ab.sh \
-    vendor/custom/prebuilt/common/bin/backuptool_ab.functions:system/bin/backuptool_ab.functions \
-    vendor/custom/prebuilt/common/bin/backuptool_postinstall.sh:system/bin/backuptool_postinstall.sh
-endif
+# Extra tools
+PRODUCT_PACKAGES += \
+    7z \
+    bash \
+    bzip2 \
+    curl \
+    fsck.ntfs \
+    gdbserver \
+    htop \
+    lib7z \
+    libsepol \
+    micro_bench \
+    mke2fs \
+    mkfs.ntfs \
+    mount.ntfs \
+    oprofiled \
+    pigz \
+    powertop \
+    sqlite3 \
+    strace \
+    tune2fs \
+    unrar \
+    unzip \
+    vim \
+    wget \
+    zip
+
+# rsync
+PRODUCT_PACKAGES += \
+    rsync
+
+# Stagefright FFMPEG plugin
+PRODUCT_PACKAGES += \
+    libffmpeg_extractor \
+    libffmpeg_omx \
+    media_codecs_ffmpeg.xml
 
 # Backup services whitelist
 PRODUCT_COPY_FILES += \
     vendor/custom/config/permissions/backup.xml:system/etc/sysconfig/backup.xml
 
-# Signature compatibility validation
-PRODUCT_COPY_FILES += \
-    vendor/custom/prebuilt/common/bin/otasigcheck.sh:install/bin/otasigcheck.sh
-
-# Custom-specific init file
-PRODUCT_COPY_FILES += \
-    vendor/custom/prebuilt/common/etc/init.local.rc:root/init.custom.rc
-
-# Copy LatinIME for gesture typing
-PRODUCT_COPY_FILES += \
-    vendor/custom/prebuilt/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
-
-# SELinux filesystem labels
-PRODUCT_COPY_FILES += \
-    vendor/custom/prebuilt/common/etc/init.d/50selinuxrelabel:system/etc/init.d/50selinuxrelabel
-
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
-
-# Don't export PS1 in /system/etc/mkshrc.
-PRODUCT_COPY_FILES += \
-    vendor/custom/prebuilt/common/etc/mkshrc:system/etc/mkshrc \
-    vendor/custom/prebuilt/common/etc/sysctl.conf:system/etc/sysctl.conf
-
-# Specific startup services
-PRODUCT_COPY_FILES += \
-    vendor/custom/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit \
-    vendor/custom/prebuilt/common/bin/sysinit:system/bin/sysinit
 
 # Required packages
 PRODUCT_PACKAGES += \
