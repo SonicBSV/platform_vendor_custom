@@ -146,36 +146,10 @@ ifeq ($(USE_QCOM_PERF),true)
         UxPerformance
 endif
 
-# Themes
-PRODUCT_PROPERTY_OVERRIDES += ro.boot.vendor.overlay.theme=com.google.android.theme.pixel
-PRODUCT_PROPERTY_OVERRIDES += ro.com.google.ime.theme_id=5
-PRODUCT_PACKAGES += \
-   Pixel \
-   Stock \
-   Mono
-
-# Versioning System
-# custom first version.
-PRODUCT_VERSION_MAINTENANCE = 1.0
-CUSTOM_POSTFIX := -$(shell date +"%d_%m")
-ifdef CUSTOM_BUILD_EXTRA
-    CUSTOM_POSTFIX := -$(CUSTOM_BUILD_EXTRA)
-endif
-
-ifndef CUSTOM_BUILD_TYPE
-    CUSTOM_BUILD_TYPE := UNOFFICIAL
-endif
-
 # Set all versions
-CUSTOM_VERSION := KAF-$(CUSTOM_BUILD)$(CUSTOM_POSTFIX)-$(shell sed '5q;d' .repo/manifest.xml | sed 's/.*tags\/\(.*\)".*/\1/')-$(CUSTOM_BUILD_TYPE)
-CUSTOM_MOD_VERSION := $(CUSTOM_VERSION)
+CAF_TAG := LA.UM.7.4.r1-05500-8x98.0
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    BUILD_DISPLAY_ID=$(BUILD_ID) \
-    ro.custom.version=$(CUSTOM_VERSION) \
-    ro.modversion=$(CUSTOM_VERSION) \
-    ro.custom.buildtype=$(CUSTOM_BUILD_TYPE)
-
-EXTENDED_POST_PROCESS_PROPS := vendor/custom/tools/custom_process_props.py
+PRODUCT_PROPERTY_OVERRIDES +=
+    ro.caf.revision=$(CAF_TAG)
 
 -include vendor/custom/config/qualcomm.mk
