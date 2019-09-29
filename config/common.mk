@@ -130,14 +130,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.storage_manager.enabled=true
 
-# easy way to extend to add more packages
--include vendor/extra/product.mk
-
-PRODUCT_PACKAGES += \
-    AndroidDarkThemeOverlay \
-    SettingsDarkThemeOverlay
-
-PRODUCT_PACKAGE_OVERLAYS += vendor/custom/overlay/common
+#PRODUCT_PACKAGE_OVERLAYS += vendor/custom/overlay/common
 
 # Qualcomm performance frameworks
 ifeq ($(USE_QCOM_PERF),true)
