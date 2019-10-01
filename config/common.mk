@@ -11,9 +11,6 @@ endif
 PRODUCT_PROPERTY_OVERRIDES += \
     keyguard.no_require_sim=true
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.build.selinux=0
-
 # Disable excessive dalvik debug messages
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.debug.alloc=0
@@ -89,17 +86,12 @@ PRODUCT_PACKAGES += \
     libprotobuf-cpp-full \
     librsjni
 
-# AudioFX
-PRODUCT_PACKAGES += \
-    AudioFX
-
 # Extra Optional packages
 PRODUCT_PACKAGES += \
     Calculator \
     LatinIME \
     BluetoothExt \
     Launcher3Dark
-
 
 # Extra tools
 PRODUCT_PACKAGES += \
@@ -111,7 +103,6 @@ PRODUCT_PACKAGES += \
     mkfs.exfat \
     ntfsfix \
     ntfs-3g
-
 
 PRODUCT_PACKAGES += \
     charger_res_images
@@ -140,7 +131,7 @@ ifeq ($(USE_QCOM_PERF),true)
 endif
 
 # Set all versions
-CAF_TAG := LA.UM.7.4.r1-05500-8x98.0
+CAF_TAG := LA.UM.8.4.r1-04200-8x98.0
 
 PRODUCT_PROPERTY_OVERRIDES +=
     ro.caf.revision=$(CAF_TAG)
