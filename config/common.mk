@@ -17,7 +17,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Optional packages
 PRODUCT_PACKAGES += \
-    libemoji \
     LiveWallpapersPicker \
     PhotoTable \
     Terminal
@@ -47,10 +46,7 @@ PRODUCT_PACKAGES += \
     unzip \
     vim \
     wget \
-    zip
-
-# rsync
-PRODUCT_PACKAGES += \
+    zip \
     rsync
 
 # Stagefright FFMPEG plugin
@@ -80,11 +76,6 @@ PRODUCT_PACKAGES += \
     Basic \
     LiveWallpapersPicker \
     PhaseBeam
-
-# Include explicitly to work around GMS issues
-PRODUCT_PACKAGES += \
-    libprotobuf-cpp-full \
-    librsjni
 
 # Extra Optional packages
 PRODUCT_PACKAGES += \
