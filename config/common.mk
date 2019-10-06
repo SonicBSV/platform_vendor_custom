@@ -124,7 +124,7 @@ endif
 # Set all versions
 CAF_TAG := LA.UM.8.4.r1-04200-8x98.0
 
-PRODUCT_PROPERTY_OVERRIDES +=
+PRODUCT_PROPERTY_OVERRIDES += \
     ro.caf.revision=$(CAF_TAG)
 
 -include vendor/custom/config/qualcomm.mk
