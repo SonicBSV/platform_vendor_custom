@@ -114,13 +114,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 #PRODUCT_PACKAGE_OVERLAYS += vendor/custom/overlay/common
 
-# Qualcomm performance frameworks
-ifeq ($(USE_QCOM_PERF),true)
-    PRODUCT_BOOT_JARS += \
-        QPerformance \
-        UxPerformance
-endif
-
 # Set all versions
 CAF_TAG := LA.UM.8.4.r1-04200-8x98.0
 
