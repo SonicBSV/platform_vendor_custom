@@ -47,4 +47,5 @@ type ProductVariables struct {
 	Target_init_vendor_lib  *string `json:",omitempty"`
 	Target_process_sdk_version_override  *string `json:",omitempty"`
 	Target_shim_libs                      *string `json:",omitempty"`
+	Target_use_sdclang                    *bool   `json:",omitempty"`
 }
