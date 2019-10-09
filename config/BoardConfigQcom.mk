@@ -92,3 +92,6 @@ else
     QCOM_HARDWARE_VARIANT := $(TARGET_BOARD_PLATFORM)
 endif
 
+ifeq ($(TARGET_HW_DISK_ENCRYPTION),true)
+    TARGET_CRYPTFS_HW_PATH ?= vendor/qcom/opensource/commonsys/cryptfs_hw
+endif
