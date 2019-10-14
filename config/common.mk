@@ -114,7 +114,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.storage_manager.enabled=true
 
-#PRODUCT_PACKAGE_OVERLAYS += vendor/custom/overlay/common
+PRODUCT_PACKAGE_OVERLAYS += vendor/custom/overlay/common
 
 # Set all versions
 CAF_TAG := LA.UM.8.4.r1-04200-8x98.0
