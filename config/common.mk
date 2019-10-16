@@ -23,7 +23,11 @@ PRODUCT_PACKAGES += \
     Terminal \
     MusicFX \
     SoundRecorder \
-    ThemePicker
+    ThemePicker \
+    Calculator \
+    LatinIME \
+    BluetoothExt \
+    Launcher3Dark
 
 # Extra tools
 PRODUCT_PACKAGES += \
@@ -71,21 +75,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     CellBroadcastReceiver \
     Development \
-    SpareParts \
-    LockClock \
-    su
-
-# Optional packages
-PRODUCT_PACKAGES += \
-    Basic \
-    PhaseBeam
-
-# Extra Optional packages
-PRODUCT_PACKAGES += \
-    Calculator \
-    LatinIME \
-    BluetoothExt \
-    Launcher3Dark
+    SpareParts
 
 # Extra tools
 PRODUCT_PACKAGES += \
