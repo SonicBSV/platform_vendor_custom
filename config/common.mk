@@ -19,9 +19,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Optional packages
 PRODUCT_PACKAGES += \
-    LiveWallpapersPicker \
     PhotoTable \
-    Terminal
+    Terminal \
+    MusicFX \
+    SoundRecorder \
+    ThemePicker
 
 # Extra tools
 PRODUCT_PACKAGES += \
@@ -76,7 +78,6 @@ PRODUCT_PACKAGES += \
 # Optional packages
 PRODUCT_PACKAGES += \
     Basic \
-    LiveWallpapersPicker \
     PhaseBeam
 
 # Extra Optional packages

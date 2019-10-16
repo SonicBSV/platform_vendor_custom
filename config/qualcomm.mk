@@ -1,5 +1,4 @@
 PRODUCT_PACKAGES += \
     SnapdragonGallery \
     SnapdragonMusic \
-    SnapdragonCamera \
-    MusicFX
+    SnapdragonCamera
