@@ -108,7 +108,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGE_OVERLAYS += vendor/custom/overlay/common
 
 # Set all versions
-CAF_TAG := LA.UM.8.4.r1-04200-8x98.0
+CAF_TAG := LA.UM.8.4.r1-04500-8x98.0
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.caf.revision=$(CAF_TAG)
