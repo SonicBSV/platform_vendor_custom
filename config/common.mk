@@ -13,6 +13,9 @@ endif
 PRODUCT_PROPERTY_OVERRIDES += \
     keyguard.no_require_sim=true
 
+# RecueParty? No thanks.
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += persist.sys.enable_rescue=false
+
 # Disable excessive dalvik debug messages
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.debug.alloc=0
@@ -105,7 +108,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.storage_manager.enabled=true
 
-PRODUCT_PACKAGE_OVERLAYS += vendor/custom/overlay/common
+DEVICE_PACKAGE_OVERLAYS += vendor/custom/overlay/common
 
 # Set all versions
 CAF_TAG := LA.UM.8.4.r1-04500-8x98.0
