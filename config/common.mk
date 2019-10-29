@@ -13,6 +13,10 @@ endif
 PRODUCT_PROPERTY_OVERRIDES += \
     keyguard.no_require_sim=true
 
+# Custom overlays
+PRODUCT_PACKAGES += \
+    custom-overlays
+
 # RecueParty? No thanks.
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += persist.sys.enable_rescue=false
 
@@ -107,6 +111,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Storage manager
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.storage_manager.enabled=true
+
+# Fonts
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,vendor/custom/prebuilt/fonts,$(TARGET_COPY_OUT_PRODUCT)/fonts) \
+    vendor/custom/prebuilt/etc/fonts_customization.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/fonts_customization.xml
+
 
 DEVICE_PACKAGE_OVERLAYS += vendor/custom/overlay/common
 
