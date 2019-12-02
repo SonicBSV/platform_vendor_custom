@@ -127,7 +127,7 @@ EXCLUDE_SYSTEMUI_TESTS := true
 
 # Dex preopt
 PRODUCT_DEXPREOPT_SPEED_APPS += \
-    SystemUIGoogle
+    SystemUI
 
 DEVICE_PACKAGE_OVERLAYS += vendor/custom/overlay/common
 
