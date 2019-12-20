@@ -116,6 +116,7 @@ PRODUCT_PACKAGES += \
     qti_telephony_hidl_wrapper.xml \
     qti-telephony-utils \
     qti_telephony_utils.xml \
+    JustCAF_options
 
 # Storage manager
 PRODUCT_PROPERTY_OVERRIDES += \
