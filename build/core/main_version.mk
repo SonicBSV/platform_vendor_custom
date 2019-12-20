@@ -3,3 +3,6 @@ ifneq ($(BUILD_FINGERPRINT),)
 ADDITIONAL_BUILD_PROPERTIES += \
     ro.build.fingerprint=$(BUILD_FINGERPRINT)
 endif
+
+# Set custom build
+CUSTOM_BUILD := true
