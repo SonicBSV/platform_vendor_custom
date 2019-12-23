@@ -1,28 +1,28 @@
-# Copyright (C) 2019 Paranoid Android
+#
+#  Copyright 2018, The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-#      http://www.apache.org/licenses/LICENSE-2.0
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+#
 
-LOCAL_PATH:= vendor/custom/overlay/packages
-
+LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
 
-LOCAL_MODULE := custom-overlays
+LOCAL_RRO_THEME := BlackTheme
+LOCAL_CERTIFICATE := platform
+LOCAL_PRODUCT_MODULE := true
+LOCAL_SRC_FILES := $(call all-subdir-java-files)
+LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res
+LOCAL_PACKAGE_NAME := BlackThemeOverlay
+LOCAL_SDK_VERSION := current
 
-LOCAL_REQUIRED_MODULES := \
-    FontGoogleSansOverlay \
-    AccentColorPixelOverlay \
-    IconShapeCircleOverlay \
-		BlackTheme
-
-include $(BUILD_PHONY_PACKAGE)
-include $(call first-makefiles-under,$(LOCAL_PATH))
+include $(BUILD_RRO_PACKAGE)
