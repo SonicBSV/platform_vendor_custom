@@ -13,18 +13,13 @@
   ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License
+  NOTE: You might also want to edit: packages/SystemUI/res/values-night/colors.xml
   -->
 
 <resources>
+    <!-- The background color of a notification card. -->
+    <color name="notification_material_background_color">@*android:color/material_grey_900</color>
 
-    <style name="Theme.DeviceDefault.QuickSettings" parent="android:Theme.DeviceDefault">
 
-        <!-- QS panel background -->
-        <item name="colorBackgroundFloating">@color/material_grey_900</item>
-
-        <!-- volume background -->
-        <item name="panelColorBackground">@color/material_grey_900</item>
-
-    </style>
-
+    <color name="system_primary_background">@*android:color/material_grey_900</color>
 </resources>
