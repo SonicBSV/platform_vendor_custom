@@ -18,8 +18,10 @@
 
 <resources>
     <!-- The background color of a notification card. -->
-    <color name="notification_material_background_color">@*android:color/material_grey_900</color>
+    <color name="notification_material_background_color">@*android:color/material_grey_850</color>
 
+    <!-- The color of the material notification background when dimmed -->
+    <color name="notification_material_background_dimmed_color">@*android:color/material_grey_850</color>
 
     <color name="system_primary_background">@*android:color/material_grey_900</color>
 </resources>
