@@ -20,6 +20,16 @@ PRODUCT_PACKAGES += \
 # RecueParty? No thanks.
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += persist.sys.enable_rescue=false
 
+# Backup Tool
+PRODUCT_COPY_FILES += \
+    vendor/aosp/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/aosp/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
+    vendor/aosp/prebuilt/common/bin/50-base.sh:system/addon.d/50-base.sh \
+    vendor/aosp/prebuilt/common/bin/blacklist:system/addon.d/blacklist
+
+PRODUCT_COPY_FILES += \
+    vendor/aosp/config/permissions/backup.xml:system/etc/sysconfig/backup.xml \
+
 # Disable excessive dalvik debug messages
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.debug.alloc=0
