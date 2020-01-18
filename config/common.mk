@@ -137,6 +137,8 @@ PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,vendor/custom/prebuilt/fonts,$(TARGET_COPY_OUT_PRODUCT)/fonts) \
     vendor/custom/prebuilt/etc/fonts_customization.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/fonts_customization.xml
 
+# Don't build tests
+EXCLUDE_SYSTEMUI_TESTS := true
 
 DEVICE_PACKAGE_OVERLAYS += vendor/custom/overlay/common
 
