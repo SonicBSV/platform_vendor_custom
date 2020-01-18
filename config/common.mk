@@ -118,6 +118,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.storage_manager.enabled=true
 
+# Don't build tests
+EXCLUDE_SYSTEMUI_TESTS := true
+
 DEVICE_PACKAGE_OVERLAYS += vendor/custom/overlay/common
 
 # Set all versions
