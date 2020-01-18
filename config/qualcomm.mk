@@ -1,5 +1,6 @@
 PRODUCT_PACKAGES += \
-    SnapdragonGallery \
+#    SnapdragonGallery \
     SnapdragonMusic \
     QtiSoundRecorder \
-    Camera2
+    Camera2 \
+    Gallery2
