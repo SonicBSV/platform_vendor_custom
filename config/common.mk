@@ -148,6 +148,15 @@ PRODUCT_COPY_FILES += \
 # Don't build tests
 EXCLUDE_SYSTEMUI_TESTS := true
 
+ifneq ($(WITH_ROOT),false)
+# Root
+PRODUCT_COPY_FILES += \
+    vendor/custom/prebuilt/zip/magisk.zip:system/addon.d/magisk.zip
+
+PRODUCT_COPY_FILES += \
+    vendor/custom/prebuilt/common/bin/busybox-arm:install/bin/busybox
+endif
+
 DEVICE_PACKAGE_OVERLAYS += vendor/custom/overlay/common
 
 # Set all versions
