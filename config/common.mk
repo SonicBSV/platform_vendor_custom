@@ -15,7 +15,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Custom overlays
 PRODUCT_PACKAGES += \
-    custom-overlays
+    custom-overlays \
+    ThemePicker
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.boot.vendor.overlay.theme=com.android.theme.color.pixel;com.android.theme.icon.roundedrect;com.android.theme.font.googlesans
