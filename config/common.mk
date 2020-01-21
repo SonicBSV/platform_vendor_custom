@@ -13,6 +13,10 @@ endif
 PRODUCT_PROPERTY_OVERRIDES += \
     keyguard.no_require_sim=true
 
+# Themes
+PRODUCT_PACKAGES += \
+    ThemePicker
+
 # RecueParty? No thanks.
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += persist.sys.enable_rescue=false
 
