@@ -27,7 +27,7 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += persist.sys.enable_rescue=false
 PRODUCT_COPY_FILES += \
     vendor/custom/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
     vendor/custom/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/custom/prebuilt/common/bin/50-base.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-lineage.sh \
+    vendor/custom/prebuilt/common/bin/50-base.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-base.sh \
     vendor/custom/prebuilt/common/bin/blacklist:$(TARGET_COPY_OUT_SYSTEM)/addon.d/blacklist
 
 # Backup Services whitelist

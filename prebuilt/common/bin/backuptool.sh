@@ -43,19 +43,6 @@ restore_addon_d() {
   fi
 }
 
-# Proceed only if /system is the expected major and minor version
-check_prereq() {
-# If there is no build.prop file the partition is probably empty.
-if [ ! -r $S/build.prop ]; then
-    return 0
-fi
-if ! grep -q "^ro.lineage.version=$V.*" $S/build.prop; then
-  echo "Not backing up files from incompatible version: $V"
-  return 0
-fi
-return 1
-}
-
 check_blacklist() {
   if [ -f $S/addon.d/blacklist -a -d /$1/addon.d/ ]; then
       ## Discard any known bad backup scripts
@@ -125,11 +112,9 @@ case "$1" in
   backup)
     mount_system
     mkdir -p $C
-    if check_prereq; then
-        if check_whitelist system; then
-            unmount_system
-            exit 127
-        fi
+    if check_whitelist system; then
+        unmount_system
+        exit 127
     fi
     check_blacklist system
     preserve_addon_d
@@ -140,11 +125,9 @@ case "$1" in
   ;;
   restore)
     mount_system
-    if check_prereq; then
-        if check_whitelist tmp; then
-            unmount_system
-            exit 127
-        fi
+    if check_whitelist tmp; then
+        unmount_system
+        exit 127
     fi
     check_blacklist tmp
     run_stage pre-restore
