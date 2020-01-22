@@ -18,9 +18,6 @@ PRODUCT_PACKAGES += \
     custom-overlays \
     ThemePicker
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.boot.vendor.overlay.theme=com.android.theme.color.pixel;com.android.theme.icon.roundedrect;com.android.theme.font.googlesans
-
 # RecueParty? No thanks.
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += persist.sys.enable_rescue=false
 
