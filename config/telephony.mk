@@ -8,9 +8,11 @@ PRODUCT_PACKAGES += \
     Stk \
     CellBroadcastReceiver
 
-# Default ringtone
+# Default sounds
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.config.ringtone=Orion.ogg
+    ro.config.ringtone=Triton.ogg
+    ro.config.notification_sound=Rhea.ogg
+    ro.config.alarm_alert=Osmium.ogg
 
 # Tethering - allow without requiring a provisioning app
 # (for devices that check this)
