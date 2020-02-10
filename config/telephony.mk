@@ -10,8 +10,8 @@ PRODUCT_PACKAGES += \
 
 # Default sounds
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.config.ringtone=Triton.ogg
-    ro.config.notification_sound=Rhea.ogg
+    ro.config.ringtone=Triton.ogg \
+    ro.config.notification_sound=Rhea.ogg \
     ro.config.alarm_alert=Osmium.ogg
 
 # Tethering - allow without requiring a provisioning app
