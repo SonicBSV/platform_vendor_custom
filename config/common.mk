@@ -130,6 +130,7 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
     SystemUI \
     Launcher3
 
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/custom/overlay
 DEVICE_PACKAGE_OVERLAYS += vendor/custom/overlay/common
 
 # Set all versions
