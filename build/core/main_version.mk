@@ -9,5 +9,5 @@ CUSTOM_BUILD := true
 
 # Set theming prop
 ADDITIONAL_BUILD_PROPERTIES += \
-    ro.boot.vendor.overlay.theme=com.android.theme.color.pixel;com.android.theme.icon.roundedrect;com.android.theme.font.googlesans
+    ro.boot.vendor.overlay.theme=com.android.theme.color.pixel;com.android.theme.icon.roundedrect;com.android.theme.font.googlesans;com.android.theme.system.black
 
