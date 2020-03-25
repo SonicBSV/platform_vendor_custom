@@ -28,6 +28,10 @@ PRODUCT_COPY_FILES += \
     vendor/custom/prebuilt/common/bin/50-base.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-base.sh \
     vendor/custom/prebuilt/common/bin/blacklist:$(TARGET_COPY_OUT_SYSTEM)/addon.d/blacklist
 
+# Bootanimation
+PRODUCT_COPY_FILES += \
+    vendor/custom/prebuilt/media/bootanimation.zip:$(TARGET_COPY_OUT_SYSTEM)/media/bootanimation.zip
+
 # Backup Services whitelist
 PRODUCT_COPY_FILES += \
     vendor/custom/config/permissions/backup.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/backup.xml
