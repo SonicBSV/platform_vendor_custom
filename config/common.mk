@@ -31,7 +31,6 @@ PRODUCT_PACKAGES += \
     MusicFX \
     SoundRecorder \
     ThemePicker \
-    Calculator \
     LatinIME \
     BluetoothExt \
     Launcher3Dark
@@ -63,12 +62,6 @@ PRODUCT_PACKAGES += \
     wget \
     zip \
     rsync
-
-# Stagefright FFMPEG plugin
-PRODUCT_PACKAGES += \
-    libffmpeg_extractor \
-    libffmpeg_omx \
-    media_codecs_ffmpeg.xml
 
 # Backup services whitelist
 PRODUCT_COPY_FILES += \
@@ -115,7 +108,9 @@ PRODUCT_PACKAGES += \
     qti-telephony-hidl-wrapper \
     qti_telephony_hidl_wrapper.xml \
     qti-telephony-utils \
-    qti_telephony_utils.xml \
+    qti_telephony_utils.xml
+
+PRODUCT_PACKAGES += \
     JustCAF_options
 
 # Storage manager
