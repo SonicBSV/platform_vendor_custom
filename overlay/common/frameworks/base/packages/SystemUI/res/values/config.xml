@@ -25,4 +25,7 @@
          This name is in the ComponentName flattened format (package/class)  -->
     <string name="config_screenshotEditor" translatable="false">com.google.android.markup/com.google.android.markup.AnnotateActivity</string>
 
+    <!-- Allow dragging the PIP to a location to close it -->
+    <bool name="config_pipEnableDismissDragToEdge">false</bool>
+
 </resources>
