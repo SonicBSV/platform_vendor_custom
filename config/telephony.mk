@@ -1,10 +1,10 @@
 # World APN list
-PRODUCT_PACKAGES += \
-    apns-conf.xml
+PRODUCT_COPY_FILES += \
+    vendor/custom/prebuilt/common/etc/apns-conf.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/apns-conf.xml
 
 # Telephony packages
 PRODUCT_PACKAGES += \
-    Messaging \
+    messaging \
     Stk \
     CellBroadcastReceiver
 
