@@ -21,9 +21,9 @@ LOCAL_MODULE := custom-overlays
 LOCAL_REQUIRED_MODULES := \
     FontGoogleSansOverlay \
     AccentColorPixelOverlay \
-		AccentColorBlueOverlay \
+    AccentColorBlueOverlay \
     IconShapeCircleOverlay \
-		BlackThemeOverlay
+	BlackThemeOverlay
 
 include $(BUILD_PHONY_PACKAGE)
 include $(call first-makefiles-under,$(LOCAL_PATH))
