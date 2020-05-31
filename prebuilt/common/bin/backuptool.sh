@@ -29,33 +29,18 @@ restore_addon_d() {
   fi
 }
 
-check_blacklist() {
-  if [ -f $S/addon.d/blacklist -a -d /$1/addon.d/ ]; then
-      ## Discard any known bad backup scripts
-      for f in /$1/addon.d/*sh; do
-          [ -f $f ] || continue
-          s=$(md5sum $f | cut -c-32)
-          grep -q $s $S/addon.d/blacklist && rm -f $f
-      done
-  fi
-}
-
-check_whitelist() {
-  found=0
-  if [ -f $S/addon.d/whitelist ];then
-      ## forcefully keep any version-independent stuff
-      cd /$1/addon.d/
-      for f in *sh; do
-          s=$(md5sum $f | cut -c-32)
-          grep -q $s $S/addon.d/whitelist
-          if [ $? -eq 0 ]; then
-              found=1
-          else
-              rm -f $f
-          fi
-      done
-  fi
-  return $found
+# Proceed only if /system is the expected major and minor version
+check_prereq() {
+# If there is no build.prop file the partition is probably empty.
+if [ ! -r $S/build.prop ]; then
+  echo "Backup/restore is not possible. Partition is probably empty"
+  return 1
+fi
+if ! grep -q "^ro.lineage.version=$V.*" $S/build.prop; then
+  echo "Backup/restore is not possible. Incompatible ROM version: $V"
+  return 2
+fi
+return 0
 }
 
 # Execute /system/addon.d/*.sh scripts with $1 parameter
@@ -96,31 +81,25 @@ determine_system_mount
 case "$1" in
   backup)
     mount_system
-    mkdir -p $C
-    if check_whitelist $S; then
-        unmount_system
-        exit 127
+    if check_prereq; then
+      mkdir -p $C
+      preserve_addon_d
+      run_stage pre-backup
+      run_stage backup
+      run_stage post-backup
     fi
-    check_blacklist $S
-    preserve_addon_d
-    run_stage pre-backup
-    run_stage backup
-    run_stage post-backup
     unmount_system
   ;;
   restore)
     mount_system
-    if check_whitelist tmp; then
-        unmount_system
-        exit 127
+    if check_prereq; then
+      run_stage pre-restore
+      run_stage restore
+      run_stage post-restore
+      restore_addon_d
+      rm -rf $C
+      sync
     fi
-    check_blacklist tmp
-    run_stage pre-restore
-    run_stage restore
-    run_stage post-restore
-    restore_addon_d
-    rm -rf $C
-    sync
     unmount_system
   ;;
   *)
