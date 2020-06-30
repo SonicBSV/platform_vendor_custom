@@ -56,9 +56,6 @@ translatable="false">
         <item>com.google.android.deskclock</item>
     </string-array>
 
-    <!-- Enable VoLTE icon -->
-    <bool name="config_display_volte">true</bool>
-
     <!-- Flag indicating whether we should enable smart battery. -->
     <bool name="config_smart_battery_available">true</bool>
 
