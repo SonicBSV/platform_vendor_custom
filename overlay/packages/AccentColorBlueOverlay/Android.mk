@@ -14,14 +14,14 @@
 # limitations under the License.
 #
 
-LOCAL_PATH:= $(call my-dir)
+LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
 LOCAL_RRO_THEME := AccentColorBlue
-LOCAL_PRODUCT_MODULE := true
-LOCAL_SRC_FILES := $(call all-subdir-java-files)
-LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res
-LOCAL_PACKAGE_NAME := AccentColorBlueOverlay
+LOCAL_PACKAGE_NAME := AccentColorBlue
 LOCAL_SDK_VERSION := current
+LOCAL_CERTIFICATE := platform
+LOCAL_PRODUCT_MODULE := true
+LOCAL_PRIVILEGED_MODULE := false
 
 include $(BUILD_RRO_PACKAGE)

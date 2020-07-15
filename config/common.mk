@@ -177,8 +177,8 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
     SystemUI \
     Launcher3
 
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/custom/overlay
 DEVICE_PACKAGE_OVERLAYS += vendor/custom/overlay/common
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/custom/overlay/common
 
 # Set all versions
 CAF_TAG := $(shell grep "<default revision=" manifest/codeaurora.xml | awk -F'"' '{print $$2}' | awk  -F "/" '{print $$3}')

@@ -12,18 +12,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-LOCAL_PATH:= vendor/custom/overlay/packages
-
+LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
 LOCAL_MODULE := custom-overlays
-
 LOCAL_REQUIRED_MODULES := \
-    FontGoogleSansOverlay \
-    AccentColorPixelOverlay \
-    AccentColorBlueOverlay \
-    IconShapeCircleOverlay \
-	BlackThemeOverlay
+    FontGoogleSans \
+    AccentColorPixel \
+    AccentColorBlue \
+    IconShapeCircle \
+    BlackTheme
 
 include $(BUILD_PHONY_PACKAGE)
-include $(call first-makefiles-under,$(LOCAL_PATH))
+include $(call all-makefiles-under,$(LOCAL_PATH))

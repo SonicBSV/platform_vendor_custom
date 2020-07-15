@@ -17,4 +17,7 @@
     <!-- Enable VoLTE icon -->
     <bool name="config_display_volte">true</bool>
 
+    <!-- Enable VoWIFI icon -->
+    <bool name="config_display_vowifi">true</bool>
+    
 </resources>
