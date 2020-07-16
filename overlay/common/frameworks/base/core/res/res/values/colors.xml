@@ -16,6 +16,13 @@
 ** limitations under the License.
 */
 -->
+
 <resources>
+
     <color name="system_notification_accent_color">@*android:color/accent_device_default_dark</color>
+
+    <!-- App accents -->
+    <color name="primary_device_default_apps">#D7DEE6</color>
+    <color name="primary_device_default_apps_dark">#9E9E9E</color>
+
 </resources>
