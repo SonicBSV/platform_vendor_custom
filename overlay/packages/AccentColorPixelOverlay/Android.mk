@@ -14,14 +14,15 @@
 # limitations under the License.
 #
 
-LOCAL_PATH:= $(call my-dir)
+LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
 LOCAL_RRO_THEME := AccentColorPixel
 LOCAL_PACKAGE_NAME := AccentColorPixel
-LOCAL_SDK_VERSION := current
 LOCAL_CERTIFICATE := platform
 LOCAL_PRODUCT_MODULE := true
 LOCAL_PRIVILEGED_MODULE := false
+LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res
+LOCAL_PRIVATE_PLATFORM_APIS := true
 
 include $(BUILD_RRO_PACKAGE)
