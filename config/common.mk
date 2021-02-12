@@ -143,7 +143,7 @@ PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/custom/overlay
 DEVICE_PACKAGE_OVERLAYS += vendor/custom/overlay/common
 
 # Set all versions
-CAF_TAG := $(shell grep "<default revision=" manifest/codeaurora.xml | awk -F'"' '{print $$2}' | awk  -F "/" '{print $$3}')
+CAF_TAG := $(shell grep "<default revision=" .repo/manifests/codeaurora.xml | awk -F'"' '{print $$2}' | awk  -F "/" '{print $$3}')
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.caf.revision=$(CAF_TAG)
