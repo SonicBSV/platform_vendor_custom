@@ -124,9 +124,6 @@ PRODUCT_PACKAGES += \
     qti-telephony-utils \
     qti_telephony_utils.xml
 
-PRODUCT_PACKAGES += \
-    JustCAF_options
-
 # Storage manager
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.storage_manager.enabled=true
@@ -143,10 +140,10 @@ PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/custom/overlay
 DEVICE_PACKAGE_OVERLAYS += vendor/custom/overlay/common
 
 # Set all versions
-CAF_TAG := $(shell grep "<default revision=" .repo/manifests/codeaurora.xml | awk -F'"' '{print $$2}' | awk  -F "/" '{print $$3}')
+CLO_TAG := $(shell grep "<default revision=" .repo/manifests/codelinaro.xml | awk -F'"' '{print $$2}' | awk  -F "/" '{print $$3}')
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.caf.revision=$(CAF_TAG)
+    ro.clo.revision=$(CLO_TAG)
 
 include vendor/custom/config/qualcomm.mk
 include vendor/custom/sdclang/sdclang.mk
